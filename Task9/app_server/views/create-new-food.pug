@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  .row.banner
+    .col-12
+      h1= title
+  .row 
+    .col-12.col-md-8 
+      form.form-horizontal(action="", method="post", role="form")
+        -if (error == "val")
+         .alert.alert-danger(role="alert") All fields are required, please try again later
+        .form-group.row
+          label.col-10.col-sm-2.col-form-label(for="name") Name
+          .col-12.col-sm-10
+            input#name.form-control(name="name")
+          label.col-10.col-sm-2.col-form-label(for="type") Type
+          .col-12.col-sm-10
+            input#name.form-control(name="type")
+        .form-group.row
+          label.col-10.col-sm-2.col-form-label(for="rating") Rating
+          .col-12.col-sm-2
+            select#rating.form-control.input-sm(name="rating")
+              option 5
+              option 4
+              option 3
+              option 2
+              option 1
+        button.btn.btn-primary.float-right Submit
+    .col-12.col-md-4

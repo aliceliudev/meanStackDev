@@ -1,0 +1,21 @@
+extends layout
+block content  
+      .row
+        .head_title.text-center
+          h3 These are my favourite food
+        each food in myFavFood
+          .col-md-6.col-sm-8                      
+              .single_pakeg_text
+                .pakeg_title
+                  img(src=food.imgName alt='') 
+                  h4=food.name
+                  ul
+                     li=food.ingredient 
+                     li=food.calories
+                     li=food.cookingTime
+                     li=food.cookingDifficulities
+                     li=food.deliveryPrice
+                  h5=food.type
+
+        
+          

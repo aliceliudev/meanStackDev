@@ -1,0 +1,25 @@
+extends layout
+include _includes/sharedHTMLfunctions
+block content
+
+  .row  
+        .col-md-12 
+          .text-center
+            h1= "Specalities in Alice's Foodplace"
+        .col-md-6
+          img(src=`../${currentFood.imgName}` alt='') 
+        .col-md-6
+          .single_abouts_text.wow.slideInRight(data-wow-duration='1s')                      
+          .card 
+            br  
+            h4=currentFood.name 
+          
+             small &nbsp;
+            +outputRating(currentFood.rating)
+             
+
+            br
+            h6=currentFood.type    
+          
+            br
+            a.btn.btn-primary(href='') Order here

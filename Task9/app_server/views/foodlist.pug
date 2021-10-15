@@ -1,0 +1,30 @@
+extends layout
+include _includes/sharedHTMLfunctions
+block content
+  .row.banner 
+    .col-6 
+      h1= title
+       small &nbsp;Popular Chinese Food
+  .col-md-12
+    p     
+    a.btn.btn-primary.float-middle(href=`/new`) Create new food
+  .row 
+    .error= message
+    
+    each food in foods
+      .col-md-3
+       img(src=food.imgName alt='')   
+       .card       
+          h4 
+            a(href=`/foods/${food._id}`)=food.name
+            small &nbsp;
+            +outputRating(food.rating)
+          h6= food.type 
+    
+              
+            
+            
+           
+  
+   
+    
