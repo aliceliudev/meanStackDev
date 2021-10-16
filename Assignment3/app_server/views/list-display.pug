@@ -1,0 +1,39 @@
+extends layout
+include _includes/sharedHTMLfunctions
+block content  
+  .container.px-4.px-lg-5.my-5
+    .text-center.text-white
+      h1=`Alice's bookstore`
+      .page-heading='A must go place'
+  // Section
+  .text-center
+     .col-md-12    
+         a.btn.btn-primary.float-middle(href=`/new`) Create new book
+  .row 
+   each book in books
+    .col-md-4 
+      .card.h-100  
+        .badge.bg-dark        
+          img(src=`../${book.imgName}` alt='a favorite book')            
+          // Product details
+          .card-body.p-4
+            .price= book.price
+            .text-center
+              // Product name
+              h5.fw-bolder
+               a(href=`/list/${book._id}`)= book.name
+              // Product price
+              p= book.author           
+              each status in book.bookStatus
+                .col-md-6 
+                  h5= status.stat
+                  .oprtng  
+                    +outputRating(status.rating)
+                  h5= status.discount 
+                  h6= status.bookform
+            .text-center
+                .col-md-12
+                     a.btn.btn-primary  Order Now 
+                  
+                             
+  

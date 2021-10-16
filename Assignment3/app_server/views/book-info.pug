@@ -1,0 +1,28 @@
+extends layout
+include _includes/sharedHTMLfunctions
+block content
+
+  .row  
+        .col-md-12 
+          .text-center
+            h1= "Popular book"
+        .col-md-6
+          img(src=`../${books.imgName}` alt='') 
+        .col-md-6
+          .single_abouts_text.wow.slideInRight(data-wow-duration='1s')                      
+          .card 
+            br  
+            h4=books.name 
+          
+             small &nbsp;
+             +outputRating(books.bookStatus.rating)           
+
+            br
+            h6=books.type  
+            h6=books.bookStatus.stat
+            h6=books.bookStatus.rating
+            h6=books.bookStatus.discount 
+            h6=books.bookStatus.bookform
+          
+            br
+            a.btn.btn-primary(href='') Order here

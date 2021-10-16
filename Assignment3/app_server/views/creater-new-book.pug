@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  .row.banner
+    .col-12
+      h1= title
+  .row 
+    .col-12.col-md-8 
+      form.form-horizontal(action="", method="post", role="form")
+        -if (error == "val")
+         .alert.alert-danger(role="alert") All fields are required, please try again later
+        .form-group.row
+          label.col-10.col-sm-2.col-form-label(for="name") Name
+          .col-12.col-sm-10
+            input#name.form-control(name="name")
+          label.col-10.col-sm-2.col-form-label(for="stat1") stat1
+          .col-12.col-sm-10
+            input#name.form-control(name="stat1")
+          label.col-10.col-sm-2.col-form-label(for="discount1") discount
+          .col-12.col-sm-10
+            input#name.form-control(name="discount1")
+          label.col-10.col-sm-2.col-form-label(for="imgName") imgName        
+          .col-12.col-sm-10
+            input#name.form-control(name="imgName")
+          label.col-10.col-sm-2.col-form-label(for="bookform1") bookform      
+          .col-12.col-sm-10
+            input#name.form-control(name="bookform1")
+          label.col-10.col-sm-2.col-form-label(for="author") author
+          .col-12.col-sm-10
+            input#name.form-control(name="author")
+          label.col-10.col-sm-2.col-form-label(for="price") price
+          .col-12.col-sm-10
+            input#name.form-control(name="price")        
+        .form-group.row
+          label.col-10.col-sm-2.col-form-label(for="rating1") Rating 
+          .col-12.col-sm-2
+            select#rating1.form-control.input-sm(name="rating1" type='number')
+              option 5
+              option 4
+              option 3
+              option 2
+              option 1
+        button.btn.btn-primary.float-right Submit
+    .col-12.col-md-12

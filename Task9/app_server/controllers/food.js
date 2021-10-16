@@ -70,10 +70,17 @@ const addNewFood = function(req, res){
 };
 
 const doAddNewFood = function(req, res){
-    const path = '/api/foods';
+    const path = '/api/foods/';
     const postdata = {
-         name: req.body.name,
-         type: req.body.type,
+       
+      
+
+
+
+
+
+
+      
          rating: req.body.rating
     };
 
@@ -86,8 +93,10 @@ const requestOptions = {
 request(
   requestOptions,
   (err, response, body) => {
+    console.log(">>", response.statusCode);
     if (response.statusCode ===201) {
-      res.direct('/');
+      console.log("XXXXXXXXXXXXXXXXXXXXXXXXXX");
+      res.redirect('/foodlist')
       }
   });
 };
